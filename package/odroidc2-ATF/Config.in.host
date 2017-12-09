@@ -1,0 +1,7 @@
+config BR2_PACKAGE_HOST_ODROIDC2_ATF
+	bool "host odroidc2-ATF"
+	help
+	  odroidc2-ATF is a package that extracts the ATF (ARM Trusted Firmware) from hardkernel's
+	  uboot repository and uses it to allow safe boot of mainline u-boot kernels.
+
+	  https://github.com/hardkernel/u-boot/tree/odroidc2-v2015.01
