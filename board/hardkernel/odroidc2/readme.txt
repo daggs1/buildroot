@@ -10,7 +10,11 @@ How to build it
 
   $ make odroidc2_defconfig
 
-Then you can edit the build options using
+For vendor based configuration or
+
+  $ make odroidc2_mainline_defconfig
+
+For community based configuration, then you can edit the build options using
 
   $ make menuconfig
 
@@ -24,7 +28,9 @@ download the packages' sources.
 Result of the build
 -------------------
 
-After building, you should obtain this tree:
+After building, you should obtain one of the following trees:
+
+For vendor based configuration:
 
     output/images/
     +-- Image
@@ -37,7 +43,24 @@ After building, you should obtain this tree:
     +-- sdcard.img
     `-- u-boot.bin
 
+For community based configuration:
+
+    output/images/
+    +-- Image
+    +-- uImage			   [2]
+    +-- boot.scr                   [1]
+    +-- boot.vfat
+    +-- meson-gxbb-odroidc2.dtb
+    +-- rootfs.ext2
+    +-- rootfs.ext4
+    +-- rootfs.tar
+    +-- sdcard.img
+    +-- uboot-odc2.img		   [3]
+    `-- u-boot.bin
+
 [1] This is the ODROID-C2 configuration file used in u-boot.
+[2] This is the ODROID-C2 kernel image file which will be booted.
+[3] This is the ODROID-C2 signed u-boot image which will be used.
 
 How to write the SD card or eMMC
 ================================
